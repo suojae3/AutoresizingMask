@@ -65,7 +65,7 @@
 ### 05. 코드를 통해 구현해주세요
 
 - 아래 첫번째는 autoresizing을 적용하지 않은경우, 두번째는 왼쪽 마진에 autoresizing을 적용한 경우, 세번째는 너비와 높이에 적용한 경우입니다.
-- autoresizing을 적용할 때는 `**autoresizingMask**` 프로퍼티를 사용합니다
+- autoresizing을 적용할 때는 `autoresizingMask` 프로퍼티를 사용합니다
 
 
 
@@ -110,7 +110,7 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.view.addSubview(nexButton)
     ```    
 
-- constraint을 잡기 전에 `**autoresizing**`을 꺼준다
+- constraint을 잡기 전에 `autoresizing`을 꺼준다
     
     ```swift
     nextButton.translatesAutoresizingMaskIntoConstraints = false
