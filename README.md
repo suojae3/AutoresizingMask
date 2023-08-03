@@ -52,7 +52,7 @@
 ### 04. Autoresizing Mask란 무엇인가요?
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.thecodedself.com/assets/images/AutoResizing/Autoresizing-Example.gif" width="400" height="200"><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.thecodedself.com/assets/images/AutoResizing/Autoresizing-Example.gif" width="300" height="100"><br/>
 
 - superview의 bounds가 변경될때 subview의 크기를 어떻게 크기를 재설정 할것인가에 대한 크기조정입니다.
 - 여백 간격은 `Top / Left / Bottom / Right Margin` 이라고 부릅니다
