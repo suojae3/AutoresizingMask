@@ -1,9 +1,19 @@
 
 <br/><br/>
 
-# **Frame-based Layout and Autoresizing Mask**
+## **스토리보드 없이 버튼 객체 생성하기(feat. Autoresizing Mask)**
 
 <br/>
+
+### 00. 스토리보드 없이 객체를 직접 표현할 때 필요한 것은 내용물 + CGRect
+
+- 이때 위치표현에 있어서 디바이스 별로 크기가 다 달라 자동으로 위치를 잡아주는 메서드를 써야합니다
+- 이 기능을 도와주는 것이 **`translatesAutoresizingMaskIntoConstraints`** 입니다
+- 이 속성은 뷰의 autoresizing mask가 자동레이아웃 제약조건으로 변환되는지 여부를 결정하는 Bool값입니다.
+
+<br/>
+
+#
 
 ### 01. 왜 **Frame-based Layout & Autoresizing Mask를 알아야 할까요?**
 
@@ -47,3 +57,41 @@
 - superview의 bounds가 변경될때 subview의 크기를 어떻게 크기를 재설정 할것인가에 대한 크기조정입니다.
 - 여백 간격은 `Top / Left / Bottom / Right Margin` 이라고 부릅니다
 - 만약 여백을 눌러 활성화시키면 `Fixed Margin`, 활성화되지 않은 방향을 Flexible Margin 이라고 부릅니다
+
+<br/>
+
+#
+
+### 05. 코드를 통해 구현해주세요
+
+- 아래 첫번째는 autoresizing을 적용하지 않은경우, 두번째는 왼쪽 마진에 autoresizing을 적용한 경우, 세번째는 너비와 높이에 적용한 경우입니다.
+- autoresizing을 적용할 때는 `**autoresizingMask**` 프로퍼티를 사용합니다
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://blog.kakaocdn.net/dn/bw0uDB/btrcNkzO4lj/kpNokpdaBP2rtIroFrKTp1/img.gif" width="200" height="200"><br/>
+autoresize 미적용 <br/><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://blog.kakaocdn.net/dn/VLhBV/btrcQfknuSf/78DT0osZKlkVjAlxbG6n20/img.gif" width="200" height="200"><br/>
+```swift
+//왼쪽 여백 autoresize 적용
+sampleSubview.autoresizingMask = [.flexibleLeftMargin]
+```
+
+<br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://blog.kakaocdn.net/dn/dYtZUP/btrcON2JJmT/KnOoYwwQaM2fSM8xnYJTL1/img.gif" width="200" height="200">
+
+<br/>
+
+```swift
+// 너비 높이 autoresize 적용
+sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+```
+<br/>
+
+#
+
+
+
+
