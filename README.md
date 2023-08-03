@@ -92,6 +92,64 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
 #
 
+### 03. 제약조건을 직접 달아주려면 `AutorizeResizing` 을 false로 두고 시작해야한다!
+
+- 위와 같은 오토리사이징은 서뷰뷰들 위치잡아줄때 쓰면 좋다
+- 버튼객체 직접 위치 잡아주고싶을 때는 자동리사이징을 끄고 constraint을 직접 잡아준다
+- 가장 먼저 일단 `UIButton()` 을 통해 객체를 생성해준다
+    
+    ```swift
+    **var nextButton = UIButton()**
+    ```
+    
+
+- 다음으로 들어가고 싶은 슈퍼뷰에 접근해서 넣어준다.
+- 이때는 `**addSubview()**` 메서드를 사용한다
+    
+    ```swift
+    **self.view.addSubview(nexButton)**
+    ```    
+
+- constraint을 잡기 전에 `**autoresizing**`을 꺼준다
+    
+    ```swift
+    **nextButton.translatesAutoresizingMaskIntoConstraints = false**
+    ```
+    
+- 스토리보드에서 하던걸 그대로 코드로 구현하면 되는 부분이다
+- 버튼을 정가운데 위치시키고 너비300, 높이 30을 설정해보자
+- x축(가로), y축(세로) 중앙위치
+    
+    ```swift
+    // Horizontally in Container**
+    nextButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive 
+    		= true
+    
+    // Vertically in Container
+    nextButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive 
+    		= true
+    ```
+    
+
+- 너비 300, 높이 30 설정
+    
+    ```swift
+    // 버튼 넓이 300
+    nextButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
+    
+    // 버튼 높이 30
+    nextButton.heightAnchor.constraint(equalToConstant: 30).isActive = true**
+    ```
+    
+
+- 위에서 100만큼 왼쪽에서 50만큼 떨어진 제약조건 설정
+  ~~~ swift
+  //위쪽에서 100
+  nextButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant:   100).isActive = true
+
+  //왼쪽에서 50
+  nextButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant:   50).isActive = true
+  ~~~
 
 
 
