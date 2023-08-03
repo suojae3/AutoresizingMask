@@ -145,10 +145,10 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 - 위에서 100만큼 왼쪽에서 50만큼 떨어진 제약조건 설정
   ~~~ swift
   //위쪽에서 100
-  nextButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant:   100).isActive = true
+  nextButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
 
   //왼쪽에서 50
-  nextButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant:   50).isActive = true
+  nextButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 50).isActive = true
   ~~~
 
 
