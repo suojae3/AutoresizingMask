@@ -92,7 +92,7 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
 #
 
-### 03. 제약조건을 직접 달아주려면 `AutorizeResizing` 을 false로 두고 시작해야한다!
+### 06. 제약조건을 직접 달아주려면 `AutorizeResizing` 을 false로 두고 시작해야한다!
 
 - 위와 같은 오토리사이징은 서뷰뷰들 위치잡아줄때 쓰면 좋다
 - 버튼객체 직접 위치 잡아주고싶을 때는 자동리사이징을 끄고 constraint을 직접 잡아준다
