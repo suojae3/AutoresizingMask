@@ -99,7 +99,7 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 - 가장 먼저 일단 `UIButton()` 을 통해 객체를 생성해준다
     
     ```swift
-    **var nextButton = UIButton()**
+    var nextButton = UIButton()
     ```
     
 
@@ -107,13 +107,13 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 - 이때는 `**addSubview()**` 메서드를 사용한다
     
     ```swift
-    **self.view.addSubview(nexButton)**
+    self.view.addSubview(nexButton)
     ```    
 
 - constraint을 잡기 전에 `**autoresizing**`을 꺼준다
     
     ```swift
-    **nextButton.translatesAutoresizingMaskIntoConstraints = false**
+    nextButton.translatesAutoresizingMaskIntoConstraints = false
     ```
     
 - 스토리보드에서 하던걸 그대로 코드로 구현하면 되는 부분이다
@@ -121,7 +121,7 @@ sampleSubview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 - x축(가로), y축(세로) 중앙위치
     
     ```swift
-    // Horizontally in Container**
+    // Horizontally in Container
     nextButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive 
     		= true
     
